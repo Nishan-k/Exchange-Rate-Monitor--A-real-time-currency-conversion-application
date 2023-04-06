@@ -1,7 +1,7 @@
 import requests
 import credentials
 from kafka import KafkaProducer
-import time
+
 
 BASE_URL = "https://api.currencyfreaks.com/v2.0/rates/latest?"
 API_KEY = credentials.key
