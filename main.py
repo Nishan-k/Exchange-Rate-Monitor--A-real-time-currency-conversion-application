@@ -16,6 +16,10 @@ currencies = data["rates"]
 for k,v in currencies.items():
     rates[k] = v
 
+kafka_data = {base:rates}
+
+
+
 producer = KafkaProducer(bootstrap_servers ="localhost:9093", acks=1)
-producer.send("currency-topic", bytes(base, 'utf-8'))
+producer.send("currency-topic", bytes(kafka_data, 'utf-8'))
 producer.flush()
