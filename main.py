@@ -2,14 +2,10 @@ import requests
 import credentials
 from kafka import KafkaProducer
 import time
+import json
 
 BASE_URL = "https://api.currencyfreaks.com/v2.0/rates/latest?"
 API_KEY = credentials.key
-
-
-
-
-
 
 i = 0
 while i <= 4:
@@ -21,7 +17,8 @@ while i <= 4:
     for k,v in currencies.items():
         rates[k] = v
 
-    kafka_data = {base:rates}
+    dict_data = {base:rates}
+    kafka_data = json.dumps(dict_data)
     producer = KafkaProducer(bootstrap_servers ="localhost:9093", acks=1)
     producer.send("currency-topic", bytes(kafka_data, 'utf-8'))
     time.sleep(12)
