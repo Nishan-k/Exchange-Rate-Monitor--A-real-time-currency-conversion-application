@@ -22,8 +22,8 @@ producer = KafkaProducer(bootstrap_servers ="localhost:9093", acks=1)
 
 for i in range(0, 5):
     amz_data = amazon.iloc[i].to_json()
-    # apple_data = apple.iloc[i].to_json()
-    # coke_data = coke.iloc[i].to_json()
+    apple_data = apple.iloc[i].to_json()
+    coke_data = coke.iloc[i].to_json()
     # google_data = google.iloc[i].to_json()
     # ibm_data = ibm.iloc[i].to_json()
     # jandj_data = johnson.iloc[i].to_json()
@@ -33,8 +33,8 @@ for i in range(0, 5):
     # tesla_data = tesla.iloc[i].to_json()
 
     producer.send("amazon-topic", bytes(amz_data, "utf-8"))
-    # producer.send("apple-topic", bytes(apple_data, "utf-8"))
-    # producer.send("coke-topic", bytes(coke_data, "utf-8"))
+    producer.send("apple-topic", bytes(apple_data, "utf-8"))
+    producer.send("coke-topic", bytes(coke_data, "utf-8"))
     # producer.send("google-topic", bytes(google_data, "utf-8"))
     # producer.send("ibm-topic", bytes(ibm_data, "utf-8"))
     # producer.send("johnson-topic", bytes(jandj_data, "utf-8"))
