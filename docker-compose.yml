@@ -37,13 +37,6 @@ services:
     networks:
       - currency-analysis
 
-  api-ingest:
-    image: 'api-ingest'
-    ports:
-       - '80:80'
-    networks:
-      - currency-analysis
-
   mongo:
     container_name: mongo-dev
     image: mongo
