@@ -1,2 +1,2 @@
-<h1> Real-Time Currency Fluctuation Analysis </h1>
+<h1> Real-Time Stock Price Fluctuation Dashboard </h1>
 <img src="./images/workflow.png"></img>
