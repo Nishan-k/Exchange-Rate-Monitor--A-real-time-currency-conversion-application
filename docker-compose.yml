@@ -41,7 +41,7 @@ services:
     container_name: mongo-dev
     image: mongo
     volumes:
-      - ./monngo:/data/db    
+      - ./mongo:/data/db    
     restart: on-failure
     ports:
       - "27017:27017"
