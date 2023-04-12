@@ -41,7 +41,7 @@ services:
     container_name: mongo-dev
     image: mongo
     volumes:
-      - ./mongo:/data/db    
+      - ./Mongodb:/data/db    
     restart: on-failure
     ports:
       - "27017:27017"
@@ -65,13 +65,13 @@ services:
       ME_CONFIG_BASICAUTH_PASSWORD: tribes
     networks:
       - currency-analysis
-    depends_on:
+    depends_on: 
       - mongo
-
-
-
 
 networks:
   currency-analysis:
     driver: bridge
+
+
+
   
