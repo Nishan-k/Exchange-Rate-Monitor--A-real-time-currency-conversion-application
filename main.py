@@ -32,7 +32,7 @@ for i in range(0, 5):
     tesla_data = tesla.iloc[i].to_json()
 
     producer.send("amazon-topic", bytes(amz_data, "utf-8"))
-    producer.send("apple-topic", bytes(apple_data, "utf-8"))
+    # producer.send("apple-topic", bytes(apple_data, "utf-8"))
     # producer.send("coke-topic", bytes(coke_data, "utf-8"))
     # producer.send("google-topic", bytes(google_data, "utf-8"))
     # producer.send("ibm-topic", bytes(ibm_data, "utf-8"))
